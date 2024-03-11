@@ -8,14 +8,16 @@ function Detail() {
 
   return (
     <div>
-      <div className="flex flex-row items-center justify-center w-auto text-sm my-6">
-        <p className="w-1/3">Your city</p>
-        <Input />
+      <div className="row justify-content-center align-items-center text-sm my-6">
+        <div className="col-4">Your city</div>
+        <div className="col-8">
+          <Input />
+        </div>
       </div>
 
-      <div className="my-6 text-center items-center justify-center">
+      <div className="text-center my-6">
         <p className="text-base pt-10 text-gray-500">{formattedDate}</p>
-        <div className="flex flex-row pt-3 items-center justify-center">
+        <div className="d-flex justify-content-center align-items-center">
           <img
             className="w-28"
             src={weatherData.currentImage}
@@ -23,13 +25,13 @@ function Detail() {
           />
           <p className="font-medium text-3xl">
             {weatherData.tempC}
-            <sup className="-top-3.5 text-xs font-medium">°C</sup>
+            <sup className="top-0.5 text-xs font-medium">°C</sup>
           </p>
         </div>
         <p className="font-medium text-2xl">{weatherData.currentCondition}</p>
       </div>
 
-      <div className="flex flex-row gap-7 items-center justify-center text-center mx-auto py-4">
+      <div className="row justify-content-center gap-7 text-center py-4">
         <WeatherInfo
           label="Humidity"
           value={`${weatherData.currentHumidity}%`}

@@ -17,16 +17,16 @@ function Input() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="d-flex">
         <input
           value={inputLocation}
           onChange={handleLocationChange}
           type="text"
           placeholder={weatherData.name}
-          className="rounded-md border-1 font-light w-40 p-2 h-8 shadow-xl ease-in-out focus:outline-none focus:ring focus:border-sky-200 delay-75 capitalize"
+          className="form-control rounded-md mr-2"
           autoFocus
         />
-        <button type="submit" className="hidden"></button>
+        <button type="submit" className="btn btn-primary d-none"></button>
       </form>
     </div>
   );

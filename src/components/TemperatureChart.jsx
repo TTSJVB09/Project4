@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { Line, Chart } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+import { Line } from "react-chartjs-2";
 import { WeatherContext } from "../services/weatherService";
 
 const TemperatureChart = () => {
@@ -18,8 +17,8 @@ const TemperatureChart = () => {
     );
   });
 
-  const pointRadiusValues = temperatures.map((_, index) =>
-    index === currentTimeIndex ? "circle" : false
+  const pointStyleValues = temperatures.map((_, index) =>
+    index === currentTimeIndex ? "circle" : undefined
   );
 
   return (
@@ -36,7 +35,7 @@ const TemperatureChart = () => {
               borderColor: "#5596f6",
               fill: true,
               borderWidth: 2,
-              pointStyle: pointRadiusValues,
+              pointStyle: pointStyleValues,
               cubicInterpolationMode: "monotone",
             },
           ],

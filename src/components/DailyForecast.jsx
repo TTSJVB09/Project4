@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { WeatherContext } from "../services/weatherService";
 
-function DailyForecast() {
+function DaylyForecast() {
   const { weatherForecastData } = useContext(WeatherContext);
 
   const formatDate = (inputDate) => {
@@ -29,19 +29,20 @@ function DailyForecast() {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center text-center">
+    <div className="row justify-content-center text-center">
       {weatherForecastData.slice(0, 3).map((forecast, index) => (
         <div
           key={index}
-          className="py-5 px-9 rounded-lg hover:bg-sky-500 hover:text-white transition ease-in-out cursor-pointer"
+          className="col py-5 px-9 rounded-lg bg-light shadow-sm mx-2 my-2"
+          style={{ cursor: "pointer" }}
         >
-          <p>{index === 0 ? "Today" : formatDate(forecast.date)}</p>
+          <p className="fs-5">{index === 0 ? "Today" : formatDate(forecast.date)}</p>
           <img
-            className="w-10 mx-auto mt-2"
+            className="w-50 mx-auto mt-2"
             src={forecast.dailyIcon}
             alt="Weather Icon"
           />
-          <p>Humidity</p>
+          <p className="fw-bold">Humidity</p>
           <p>{forecast.dailyHumidity}%</p>
         </div>
       ))}
@@ -49,4 +50,4 @@ function DailyForecast() {
   );
 }
 
-export default DailyForecast;
+export default DaylyForecast;

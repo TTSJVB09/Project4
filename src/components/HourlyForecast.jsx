@@ -6,7 +6,7 @@ function HourlyForecast() {
 
   return (
     <div>
-      <div className="flex flex-row border-t-2 border-b-2 overflow-hidden no-scrollbar overscroll-none gap-1 items-center text-center justify-start overflow-x-auto">
+      <div className="d-flex flex-row border-top border-bottom overflow-hidden no-scrollbar overscroll-none gap-1 align-items-center text-center justify-content-start overflow-x-auto">
         {weatherData.hourlyForecast.slice(0, 24).map((hour, index) => (
           <div key={index} className="p-3">
             <p>{hour.tempC}°C</p>
