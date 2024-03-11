@@ -28,17 +28,18 @@ function DaylyForecast() {
     return `${monthName} ${day}`;
   };
 
+
   return (
     <div className="row justify-content-center text-center">
       {weatherForecastData.slice(0, 3).map((forecast, index) => (
         <div
           key={index}
-          className="col py-5 px-9 rounded-lg bg-light shadow-sm mx-2 my-2"
+          className="col py-4 px-4 rounded-lg bg-light shadow-sm mx-2 my-2"
           style={{ cursor: "pointer" }}
         >
           <p className="fs-5">{index === 0 ? "Today" : formatDate(forecast.date)}</p>
           <img
-            className="w-50 mx-auto mt-2"
+            className="w-25 mx-auto mt-2"
             src={forecast.dailyIcon}
             alt="Weather Icon"
           />

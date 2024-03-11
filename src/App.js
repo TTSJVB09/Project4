@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import { WeatherServiceProvider } from "./services/weatherService";
 import { LocationProvider } from "./services/locationContext";
@@ -11,24 +10,20 @@ function App() {
   return (
     <LocationProvider>
       <WeatherServiceProvider>
-        <div className="container mx-auto mt-4 py-5 px-5 bg-gradient bg-white shadow-lg">
+        <div className="container-md mx-auto mt-4 py-5 px-5 bg-gradient bg-white shadow-xl shadow-gray-400 w-75">
           <div className="row">
             <div className="col-md-4">
               <Detail />
             </div>
             <div className="col-md-8">
-              <div className="row">
-                <div className="col-md-12">
+              <div className="">
+                <div >
                   <TemperatureChart />
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
+                <div >
                   <HourlyForecast />
                 </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
+                <div >
                   <DailyForecast />
                 </div>
               </div>
